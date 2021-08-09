@@ -6,6 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: PagesComponent,
+    children: [
+      {
+        path: 'question',
+        loadChildren: () => import('./question/question.module').then(m => m.QuestionModule)
+      },
+    ]
   },
 ];
 
